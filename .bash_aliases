@@ -3,7 +3,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias ll="ls -alF"
+alias ll="ls -alhF"
 
 alias rm="rm -i"
 alias mv="mv -i"
