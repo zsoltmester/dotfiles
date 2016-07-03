@@ -36,9 +36,9 @@ fi
 shopt -s checkwinsize
 
 # check if the terminal support colors
-case "$TERM" in
-    xterm-color|*-256color) support_colors=yes;;
-esac
+if (( $(tput colors) >= 8 )); then
+    support_colors=yes
+fi
 
 # set the prompt for "user@host:dir$ "
 if [ "$support_colors" = yes ]; then
