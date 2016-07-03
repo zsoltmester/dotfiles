@@ -1,2 +1,2 @@
 # bash
-My bash things.
+My bash configurations.
