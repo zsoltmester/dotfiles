@@ -1,4 +1,5 @@
 alias ..='cd ..'
+alias cd..='cd ..'
 
 # show colored output, if possible
 alias ls='ls --color=auto'
