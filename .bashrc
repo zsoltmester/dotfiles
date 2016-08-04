@@ -9,7 +9,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # set the default editor
-export EDITOR=nano
+export EDITOR=vi
 
 # the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
