@@ -21,8 +21,8 @@ alias du="du -h"
 # create parents, if necesseary
 alias mkdir='mkdir -p'
 
-# update with apt-get
-alias up="sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
+# update with apt package manager
+alias up="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
 
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
