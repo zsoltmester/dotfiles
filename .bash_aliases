@@ -1,5 +1,8 @@
-alias ..='cd ..'
+# common mistakes
 alias cd..='cd ..'
+
+# shortcuts
+alias e='exit'
 
 # show colored output, if possible
 alias ls='ls --color=auto'
