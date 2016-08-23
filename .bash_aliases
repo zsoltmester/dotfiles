@@ -24,6 +24,9 @@ alias du="du -h"
 # create parents, if necesseary
 alias mkdir='mkdir -p'
 
+# tar print updates
+alias tar='tar -v'
+
 # update with apt package manager
 alias up="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
 
