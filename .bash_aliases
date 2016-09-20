@@ -28,7 +28,7 @@ alias mkdir='mkdir -p'
 alias tar='tar -v'
 
 # update with apt package manager
-alias up="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
+alias up="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt-get autoclean"
 
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
