@@ -85,7 +85,7 @@ endif
 "
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
-packadd matchit
+"packadd matchit
 
 " Turn off highlight last search results
 set nohls
