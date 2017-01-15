@@ -1,25 +1,30 @@
 # common mistakes
 alias cd..='cd ..'
+alias lesss='less'
 
 # shortcuts
 alias e='exit'
 
-# show colored output, if possible
-alias ls='ls --color=auto'
+# show colored grep, if possible
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
-# my parametrized ls
-alias ll="ls -alhF --group-directories-first"
+# ls aliases for both GNU and BSD version
+if ls --color=auto &> /dev/null; then
+    alias ls='ls --color=auto'
+    alias ll='ls -alhF --group-directories-first'
+else 
+    export CLICOLOR=1
+    alias ll='ls -alhF'
+fi
 
 # prevent accidently deletions
-alias rm="rm -i"
-alias mv="mv -i"
+alias rm='rm -i'
+alias mv='mv -i'
 
 # display size in human readable form
-alias df="df -h"
-alias du="du -h"
+alias df='df -h'
+alias du='du -h'
 
 # create parents, if necesseary
 alias mkdir='mkdir -p'
@@ -28,7 +33,11 @@ alias mkdir='mkdir -p'
 alias tar='tar -v'
 
 # update with apt package manager
-alias up="sudo apt update && sudo apt upgrade && sudo apt-get autoremove && sudo apt-get autoclean"
+if which brew &> /dev/null; then
+    alias up='brew update && brew upgrade && brew cleanup -s'
+else
+    alias up='sudo apt update && sudo apt upgrade && sudo apt-get autoremove && sudo apt-get autoclean'
+fi
 
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
