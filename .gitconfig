@@ -1,0 +1,51 @@
+[user]
+	email = zsolt.mester67@gmail.com
+	name = zsmester
+[push]
+	default = simple
+[alias]
+	a = add
+	aa = add --all
+
+	b = branch
+	bd = branch -D
+
+	co = checkout
+	cob = checkout -b
+
+	c = commit
+	cm = commit -m
+	ca = commit --amend -C HEAD
+
+	d = diff
+
+	f = fetch --purne
+
+	l = log
+	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+	ps = push -u
+	pf = push -u -f
+	pso = push -u origin
+	pfo = push -u -f origin
+	psm = push -u origin master
+	pfm = push -u -f origin master
+
+	pl = pull --purne
+	plo = pull --purne origin
+
+	rb = rebase
+
+	rm = reset --hard HEAD
+
+	st = status
+
+	sh = stash
+	shc = stash clear
+	shl = stash list
+	shp = stash pop
+
+	aa-cm = !git aa && git cm
+	aa-c-p = !git aa && git c && git ps
+	aa-ca-pf = !git aa && git ca && git pf
+	up = !git sh && git pl && git shp
