@@ -1,4 +1,4 @@
-# common mistakes
+# fix common mistakes
 alias cd..='cd ..'
 alias lesss='less'
 
@@ -13,7 +13,7 @@ alias fgrep='fgrep --color=auto'
 if ls --color=auto &> /dev/null; then
     alias ls='ls --color=auto'
     alias ll='ls -alhF --group-directories-first'
-else 
+else
     export CLICOLOR=1
     alias ll='ls -alhF'
 fi
@@ -32,13 +32,19 @@ alias mkdir='mkdir -p'
 # tar print updates
 alias tar='tar -v'
 
-# update with apt package manager
+# update the installed packages
 if which brew &> /dev/null; then
     alias up='brew update && brew upgrade && brew cleanup -s'
-else
+else if which apt &> /dev/null; then
     alias up='sudo apt update && sudo apt upgrade && sudo apt-get autoremove && sudo apt-get autoclean'
+else
+    alias up='Package manager not supported.'
 fi
 
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+if which notify-send &> /dev/null; then
+    alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+else
+    alias up='OS not supported.'
+fi
