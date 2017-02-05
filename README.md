@@ -1,7 +1,8 @@
-# bash
-My bash configurations.
+# config
 
-## Atom
+My config for some applications and environments.
+
+# Atom
 
 ## Packages to install
 

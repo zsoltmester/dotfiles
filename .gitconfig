@@ -46,6 +46,6 @@
 	shp = stash pop
 
 	aa-cm = !git aa && git cm
-	aa-c-p = !git aa && git c && git ps
+	aa-c-ps = !git aa && git c && git ps
 	aa-ca-pf = !git aa && git ca && git pf
 	up = !git sh && git pl && git shp
