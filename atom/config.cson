@@ -1,0 +1,27 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-gfm"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 16
+    preferredLineLength: 120
+    softTabs: false
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "35963bef-d799-4599-8a13-237fa032a997"
+  "markdown-preview":
+    breakOnSingleNewline: true
+    liveUpdate: false
+    useGitHubStyle: true
+  tabs:
+    enableVcsColoring: true
+  welcome:
+    showOnStartup: false
+".md.text":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4

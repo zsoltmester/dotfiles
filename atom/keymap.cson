@@ -1,0 +1,5 @@
+'body':
+    'ctrl-1': 'window:increase-font-size'
+    'ctrl-2': 'window:decrease-font-size'
+    'ctrl-alt-1': 'pane:increase-size'
+    'ctrl-alt-2': 'pane:decrease-size'
