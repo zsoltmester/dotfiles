@@ -8,8 +8,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# include .vars if it exists
-# the .vars should contain environment variable definitions and path extension
-if [ -f "$HOME/.vars" ]; then
-    . "$HOME/.vars"
+# include .env if it exists
+# the .env should contain environment variable definitions and path extension
+if [ -f "$HOME/.env" ]; then
+    . "$HOME/.env"
 fi
