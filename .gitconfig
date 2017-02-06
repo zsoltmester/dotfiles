@@ -3,6 +3,8 @@
 	name = zsmester
 [push]
 	default = simple
+[fetch]
+    prune = true
 [alias]
 	a = add
 	aa = add --all
