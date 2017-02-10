@@ -22,7 +22,7 @@
 
 	d = diff
 
-	f = fetch --purne
+	f = fetch --prune
 
 	l = log
 	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -34,8 +34,8 @@
 	psm = push -u origin master
 	pfm = push -u -f origin master
 
-	pl = pull --purne
-	plo = pull --purne origin
+	pl = pull --prune
+	plo = pull --prune origin
 
 	rb = rebase
 
