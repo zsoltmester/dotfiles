@@ -8,6 +8,7 @@ My config for some applications and environments.
 
 - language-markdown
 - markdown-preview
+- project-manager
 
 ## Some keybindings
 

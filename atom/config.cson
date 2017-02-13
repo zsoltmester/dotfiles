@@ -18,6 +18,8 @@
     breakOnSingleNewline: true
     liveUpdate: false
     useGitHubStyle: true
+  "project-manager":
+    alwaysOpenInSameWindow: true
   tabs:
     enableVcsColoring: true
   welcome:
