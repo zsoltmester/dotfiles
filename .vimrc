@@ -2,6 +2,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Don't create undo files.
+set noundofile
+
+" Don't create backup files.
+set nobackup
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
