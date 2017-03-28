@@ -15,6 +15,7 @@
 	co = checkout
 	cob = checkout -b
     com = checkout master
+    cod = checkout development
 
 	c = commit
 	cm = commit -m

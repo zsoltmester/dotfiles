@@ -41,6 +41,12 @@ else
     alias up='Package manager not supported.'
 fi
 
+# update the git repositories in the current directory
+alias git_up='for dir in */; do cd $dir; git up; cd ..; done'
+
+# print the status of the git repositories in the current directory
+alias git_st='for dir in */; do cd $dir; git st; cd ..; done'
+
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
 if which notify-send &> /dev/null; then

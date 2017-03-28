@@ -75,3 +75,13 @@ shopt -s histappend
 # set history length
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+##
+# GIT
+##
+
+# checkout the given branch in all of the git repositories in the current directory
+git_co()
+{
+    for dir in */; do cd $dir; git co "$1"; cd ..; done
+}
