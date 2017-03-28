@@ -77,11 +77,11 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 ##
-# GIT
+# Utility functions
 ##
 
-# checkout the given branch in all of the git repositories in the current directory
-git_co()
+# run the given command in all directory
+indirs()
 {
-    for dir in */; do cd $dir; git co "$1"; cd ..; done
+    for dir in */; do cd $dir; eval $1; cd ..; done
 }
