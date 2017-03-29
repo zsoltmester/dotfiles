@@ -80,8 +80,14 @@ HISTFILESIZE=2000
 # Utility functions
 ##
 
-# run the given command in all directory
+# run the given command in all directories
 indirs()
 {
     for dir in */; do cd $dir; eval $1; cd ..; done
+}
+
+# run the given command in all git directories
+ingitdirs()
+{
+    for dir in */; do cd $dir; if [ -d .git ]; then eval $1; fi; cd ..; done
 }
