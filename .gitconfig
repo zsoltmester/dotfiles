@@ -39,6 +39,8 @@
 	plo = pull --prune origin
 
 	rb = rebase
+    rbc = rebase --continue
+    rba = rebase --abort
 
     re = reset
     rh = reset --hard
