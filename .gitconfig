@@ -57,4 +57,4 @@
 	aa-c-ps = !git aa && git c && git ps
 	aa-ca-pf = !git aa && git ca && git pf
     ca-pf = !git ca && git pf
-	up = !git sh && git pl && git shp
+	up = !git shc && git sh && git pl && git shp
