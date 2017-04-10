@@ -60,3 +60,4 @@
 
     up = !git shc && git sh && git pl && git shp
     bn = rev-parse --abbrev-ref HEAD
+    rg = !git rm --cached -r . && git aa
