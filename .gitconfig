@@ -21,6 +21,8 @@
 	cm = commit -m
 	ca = commit --amend -C HEAD
 
+    cp = cherry-pick
+
 	d = diff
 
 	f = fetch --prune
