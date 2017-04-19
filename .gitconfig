@@ -31,11 +31,11 @@
 	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
 	ps = push -u
-	pf = push -u -f
+	psf = push -u -f
 	pso = push -u origin
-	pfo = push -u -f origin
+	psfo = push -u -f origin
 	psm = push -u origin master
-	pfm = push -u -f origin master
+	psfm = push -u -f origin master
 
 	pl = pull --prune
 	plo = pull --prune origin
@@ -44,9 +44,9 @@
     rbc = rebase --continue
     rba = rebase --abort
 
-    re = reset
-    rh = reset --hard
-	rhh = reset --hard HEAD
+    rs = reset
+    rsh = reset --hard
+	rshh = reset --hard HEAD
 
 	st = status
 
@@ -57,9 +57,9 @@
 
 	aa-cm = !git aa && git cm
 	aa-c-ps = !git aa && git c && git ps
-	aa-ca-pf = !git aa && git ca && git pf
-    ca-pf = !git ca && git pf
+	aa-ca-psf = !git aa && git ca && git psf
 
     up = !git shc && git sh && git pl && git shp
-    bn = rev-parse --abbrev-ref HEAD
-    rg = !git rm --cached -r . && git aa
+    branch-name = rev-parse --abbrev-ref HEAD
+    reset-gitignore = !git rm --cached -r . && git aa
+    clear = !git rh && git clean -xfd
