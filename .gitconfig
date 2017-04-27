@@ -62,4 +62,4 @@
     up = !git shc && git sh && git pl && git shp
     branch-name = rev-parse --abbrev-ref HEAD
     reset-gitignore = !git rm --cached -r . && git aa
-    clear = !git rh && git clean -xfd
+    clear = !git rsh && git clean -xfd
