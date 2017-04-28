@@ -32,15 +32,6 @@ alias mkdir='mkdir -p'
 # tar print updates
 alias tar='tar -v'
 
-# update the installed packages
-if which brew &> /dev/null; then
-    alias up='brew update && brew upgrade && brew cleanup -s'
-elif which apt &> /dev/null; then
-    alias up='sudo apt update && sudo apt upgrade && sudo apt-get autoremove && sudo apt-get autoclean'
-else
-    alias up='Package manager not supported.'
-fi
-
 # an "alert" alias for long running commands
 # use like so: "sleep 10; alert"
 if which notify-send &> /dev/null; then

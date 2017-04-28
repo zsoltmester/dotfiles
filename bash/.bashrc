@@ -80,6 +80,55 @@ HISTFILESIZE=2000
 # Utility functions
 ##
 
+# print a header, where the title is the first argument
+print_header()
+{
+    title_length=${#1}
+    printf "%0.s-" $(seq 1 $title_length)
+    printf "\n"
+    echo "$1"
+}
+
+# update all the packages, which are available through a package manager
+up()
+{
+    if which apt-get &> /dev/null; then
+        print_header "Updating with apt..."
+        sudo apt update && sudo apt upgrade && sudo apt-get autoremove && sudo apt-get autoclean
+    fi
+
+    if which brew &> /dev/null; then
+        print_header "Updating with brew..."
+        brew update && brew upgrade && brew cleanup -s
+    fi
+
+    if which conda &> /dev/null; then
+        print_header "Updating with conda..."
+        conda update anaconda
+    elif which pip &> /dev/null; then
+        print_header "Updating with pip..."
+        pip install -U pip-review
+        pip-review --auto
+        pip check
+    fi
+
+    if which gem &> /dev/null; then
+        print_header "Updating with gem..."
+        sudo gem update --system
+        sudo gem update
+    fi
+
+    if which npm &> /dev/null; then
+        print_header "Updating with npm..."
+        sudo npm update -g
+    fi
+
+    if which apm &> /dev/null; then
+        print_header "Updating with apm..."
+        apm upgrade
+    fi
+}
+
 # run the given command in all directories
 indirs()
 {
