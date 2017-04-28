@@ -25,7 +25,7 @@
 
 	d = diff
 
-	f = fetch --prune
+	f = fetch --prune --tags
 
 	l = log
 	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
