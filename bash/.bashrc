@@ -105,11 +105,19 @@ up()
     if which conda &> /dev/null; then
         print_header "Updating with conda..."
         conda update anaconda
-    elif which pip &> /dev/null; then
-        print_header "Updating with pip..."
-        pip install -U pip-review
-        pip-review --auto
-        pip check
+    else
+        if which pip &> /dev/null; then
+            print_header "Updating with pip..."
+            pip install -U pip-review
+            pip-review --auto
+            pip check
+        fi
+        if which pip3 &> /dev/null; then
+            print_header "Updating with pip3..."
+            pip3 install -U pip-review
+            pip-review --auto
+            pip3 check
+        fi
     fi
 
     if which gem &> /dev/null; then
