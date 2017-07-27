@@ -163,3 +163,19 @@ ingitdirs()
         cd ..;
     done
 }
+
+# run the given git command in all git directories which are on the given branch
+# the first param is the branch, the second is the command
+ingitdirsonbranch()
+{
+    for dir in */;
+    do
+        cd $dir;
+        if [ -d .git ] && [ "$(git branch-name)" == "$1" ];
+        then
+            echo "In $dir..."
+            eval "git $2";
+        fi;
+        cd ..;
+    done
+}
