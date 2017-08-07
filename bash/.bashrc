@@ -73,8 +73,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # set history length
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 ##
 # Utility functions
