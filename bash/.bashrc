@@ -76,6 +76,11 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=10000
 
+# init rbenv
+if which rbenv &> /dev/null; then
+    eval "$(rbenv init -)"
+fi
+
 ##
 # Utility functions
 ##
@@ -120,10 +125,10 @@ up()
         fi
     fi
 
-    if which gem &> /dev/null; then
-        print_header "Updating with gem..."
-        sudo gem update --system
-        sudo gem update
+    if which rbenv &> /dev/null; then
+        print_header "Updating with gem using rbenv..."
+        gem update --system
+        gem update
     fi
 
     if which npm &> /dev/null; then
