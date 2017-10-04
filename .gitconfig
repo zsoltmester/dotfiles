@@ -24,6 +24,7 @@
     cp = cherry-pick
 
 	d = diff
+	ds = diff --staged
 
 	f = fetch --prune --tags
 
