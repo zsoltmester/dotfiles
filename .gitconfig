@@ -1,6 +1,8 @@
 [user]
 	email = zsolt.mester67@gmail.com
 	name = zsmester
+[core]
+	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
 [fetch]
