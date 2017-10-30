@@ -148,8 +148,8 @@ indirs()
     for dir in */;
     do
         cd $dir;
-        echo "In $dir..."
-        eval $1;
+        echo "In $dir executing \"$*\""
+        eval "$*"
         cd ..;
     done
 }
@@ -162,8 +162,8 @@ ingitdirs()
         cd $dir;
         if [ -d .git ];
         then
-            echo "In $dir..."
-            eval "git $1";
+            echo "In $dir executing \"git $*\""
+            eval "git $*";
         fi;
         cd ..;
     done
@@ -178,8 +178,9 @@ ingitdirsonbranch()
         cd $dir;
         if [ -d .git ] && [ "$(git branch-name)" == "$1" ];
         then
-            echo "In $dir..."
-            eval "git $2";
+            echo "In $dir executing \"git $*\""
+            cmd=$(expr "$*" : "$1\(.*\)")
+            eval "git $cmd";
         fi;
         cd ..;
     done
