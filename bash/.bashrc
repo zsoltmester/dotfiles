@@ -1,15 +1,10 @@
-#~/.bashrc file for interactive shells
-
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# alias definitions
+# include .bash_aliases if it exists
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# set the default editor
-export EDITOR=vi
 
 # the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories
@@ -31,7 +26,7 @@ fi
 set -o noclobber
 
 ##
-# INTERFACE
+# Interface
 ##
 
 # check the window size after each command and, if necessary,
@@ -63,7 +58,7 @@ fi
 unset support_colors
 
 ##
-# HISTORY
+# History
 ##
 
 # don't put duplicate lines or lines starting with space in the history
@@ -75,6 +70,10 @@ shopt -s histappend
 # set history length
 HISTSIZE=10000
 HISTFILESIZE=10000
+
+##
+# External environments
+##
 
 # init rbenv
 if which rbenv &> /dev/null; then

@@ -1,4 +1,11 @@
-# ~/.profile: executed by the command interpreter for login shells
+# include .env if it exists
+# .env contains environment related variables
+if [ -f "$HOME/.env" ]; then
+    . "$HOME/.env"
+fi
+
+# set the default editor
+export EDITOR=vi
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -6,10 +13,4 @@ if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
 	    . "$HOME/.bashrc"
     fi
-fi
-
-# include .env if it exists
-# the .env should contain environment variable definitions and path extension
-if [ -f "$HOME/.env" ]; then
-    . "$HOME/.env"
 fi
