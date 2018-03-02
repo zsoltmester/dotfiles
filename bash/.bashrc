@@ -12,7 +12,7 @@ fi
 export EDITOR=vi
 
 # the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
+# match all files and zero or more directories and subdirectories
 shopt -s globstar
 
 # enable programmable completion features
@@ -182,6 +182,21 @@ ingitdirsonbranch()
             echo "In $dir executing \"git $*\""
             cmd=$(expr "$*" : "$1\(.*\)")
             eval "git $cmd";
+        fi;
+        cd ..;
+    done
+}
+
+# run the given git command in all git directories which have uncommited changes
+ingitdirswithchanges()
+{
+    for dir in */;
+    do
+        cd $dir;
+        if [[ -d .git ]] && ([[ "$(git st)" = *"Changes to be committed:"* ]] || [[ "$(git st)" = *"Changes not staged for commit:"* ]] || [[ "$(git st)" = *"Untracked files:"* ]]);
+        then
+            echo "In $dir executing \"git $*\""
+            eval "git $*";
         fi;
         cd ..;
     done
