@@ -1,6 +1,6 @@
-# config
+# dotfiles
 
-My config for some applications and environments.
+My configs for some applications and environments.
 
 # Atom
 
