@@ -142,61 +142,87 @@ up()
     fi
 }
 
-# run the given command in all directories
+# Executes the given command in all subdirectories of the current directory.
 indirs()
 {
-    for dir in */;
+    local command="$*"
+    [[ -z "$command" ]] && echo "Command is empty!" && return
+    printf "Command to execute: \"$command\"\n\n"
+
+    for directory in */
     do
-        cd $dir;
-        echo "In $dir executing \"$*\""
-        eval "$*"
-        cd ..;
+        cd $directory
+        printf "\033[01;34m${directory::-1}\033[00m:\n"
+        eval "$command"
+        printf '\n'
+        cd ..
     done
 }
 
-# run the given git command in all git directories
+# Executes the given git command in all subdirectories of the current directory, which are a git repository.
 ingitdirs()
 {
-    for dir in */;
+    local command="$*"
+    [[ -z "$command" ]] && echo "Command is empty!" && return
+    printf "Command to execute: \"git $command\"\n\n"
+
+    for directory in */
     do
-        cd $dir;
-        if [ -d .git ];
+        cd $directory
+        if [[ -d .git ]]
         then
-            echo "In $dir executing \"git $*\""
-            eval "git $*";
-        fi;
-        cd ..;
+            printf "\033[01;34m${directory::-1}\033[00m:\n"
+            eval "git $command"
+            printf '\n'
+        fi
+        cd ..
     done
 }
 
-# run the given git command in all git directories which are on the given branch
-# the first param is the branch, the second is the command
+# Executes the given git command in all subdirectories of the current directory, which are a git repository and on the given branch.
 ingitdirsonbranch()
 {
-    for dir in */;
+    local branch="$1"
+    [[ -z "$branch" ]] && echo "Branch is empty!" && return
+    printf "Branch to search for: $branch\n"
+
+    local command="${@:2}"
+    [[ -z "$command" ]] && echo "Command is empty!" && return
+    printf "Command to execute: \"git $command\"\n\n"
+
+    for directory in */
     do
-        cd $dir;
-        if [ -d .git ] && [ "$(git branch-name)" == "$1" ];
+        cd $directory
+        if [[ -d .git ]] && [[ "$(git branch-name)" == "$branch" ]]
         then
-            echo "In $dir executing \"git $*\""
-            cmd=$(expr "$*" : "$1\(.*\)")
-            eval "git $cmd";
-        fi;
-        cd ..;
+            printf "\033[01;34m${directory::-1}\033[00m:\n"
+            eval "git $command"
+            printf '\n'
+        fi
+        cd ..
     done
 }
 
-# run the given git command in all git directories which have uncommited changes
+# Executes the given git command in all subdirectories of the current directory, which are a git repository and have uncommited changes.
 ingitdirswithchanges()
 {
-    for dir in */;
+    local command="$*"
+    [[ -z "$command" ]] && echo "Command is empty!" && return
+    printf "Command to execute: \"git $command\"\n\n"
+
+    for directory in */
     do
-        cd $dir;
-        if [[ -d .git ]] && ([[ "$(git st)" = *"Changes to be committed:"* ]] || [[ "$(git st)" = *"Changes not staged for commit:"* ]] || [[ "$(git st)" = *"Untracked files:"* ]]);
+        cd $directory
+        if [[ -d .git ]]
         then
-            echo "In $dir executing \"git $*\""
-            eval "git $*";
-        fi;
-        cd ..;
+            local repository_status="$(git st)"
+            if [[ "$repository_status" = *"Changes to be committed:"* ]] || [[ "$repository_status" = *"Changes not staged for commit:"* ]] || [[ "$repository_status" = *"Untracked files:"* ]]
+            then
+                printf "\033[01;34m${directory::-1}\033[00m:\n"
+                eval "git $command"
+                printf '\n'
+            fi
+        fi
+        cd ..
     done
 }
