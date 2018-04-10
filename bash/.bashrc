@@ -126,8 +126,8 @@ up()
 
     if which rbenv &> /dev/null; then
         print_header "Updating with gem using rbenv..."
-        gem update --system
-        gem update --no-ri --no-rdoc
+        gem update --system -N
+        gem update -N
         gem cleanup
     fi
 
