@@ -24,7 +24,18 @@
     enableVcsColoring: true
   welcome:
     showOnStartup: false
+".gemfile.ruby.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
 ".md.text":
   editor:
     preferredLineLength: 120
     tabLength: 4
+".ruby.source":
+  editor:
+    tabLength: 2
+    tabType: "soft"
+".source.yaml":
+  editor:
+    tabLength: 2
