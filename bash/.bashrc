@@ -109,19 +109,6 @@ up()
     if which conda &> /dev/null; then
         print_header "Updating with conda..."
         conda update anaconda
-    else
-        if which pip &> /dev/null; then
-            print_header "Updating with pip..."
-            pip install -U pip-review
-            pip-review --auto
-            pip check
-        fi
-        if which pip3 &> /dev/null; then
-            print_header "Updating with pip3..."
-            pip3 install -U pip-review
-            pip-review --auto
-            pip3 check
-        fi
     fi
 
     if which rbenv &> /dev/null; then
@@ -134,12 +121,15 @@ up()
     if which npm &> /dev/null; then
         print_header "Updating with npm..."
         sudo npm update -g
+        # TODO: sudoless npm update
     fi
 
     if which apm &> /dev/null; then
         print_header "Updating with apm..."
         apm upgrade
     fi
+
+    # TODO: update pip packages
 }
 
 # Executes the given command in all subdirectories of the current directory.
