@@ -106,11 +106,6 @@ up()
         brew update && brew upgrade && brew cleanup -s
     fi
 
-    if which conda &> /dev/null; then
-        print_header "Updating with conda..."
-        conda update anaconda
-    fi
-
     if which rbenv &> /dev/null; then
         print_header "Updating with gem using rbenv..."
         gem update --system -N
