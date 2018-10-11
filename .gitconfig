@@ -33,6 +33,9 @@
 	l = log
 	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
+	m = merge
+	md = merge development
+
 	ps = push -u
 	psf = push -u -f
 	pso = push -u origin
@@ -44,6 +47,7 @@
 	plo = pull --prune origin
 
 	rb = rebase
+	rbd = rebase development
 	rbi = rebase --interactive
 	rbc = rebase --continue
     rba = rebase --abort
