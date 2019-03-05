@@ -110,7 +110,6 @@ up()
         print_header "Updating with gem using rbenv..."
         gem update --system -N
         gem update -N
-        gem cleanup
     fi
 
     if which npm &> /dev/null; then
