@@ -49,6 +49,7 @@
 
 	rb = rebase
 	rbd = rebase development
+    rbm = rebase master
 	rbi = rebase --interactive
 	rbc = rebase --continue
     rba = rebase --abort
