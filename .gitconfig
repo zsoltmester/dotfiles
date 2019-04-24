@@ -12,6 +12,7 @@
 	aa = add --all
 
 	b = branch
+    ba = branch --all
 	bd = branch -D
 
 	co = checkout
