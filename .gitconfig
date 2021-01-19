@@ -1,6 +1,6 @@
 [user]
-	email = zsolt.mester67@gmail.com
-	name = zsoltmester
+	email = mester.zsolt@gbsolutions.io
+	name = zsmester
 [core]
 	excludesfile = ~/.gitignore_global
 [push]
