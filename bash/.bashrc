@@ -6,10 +6,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories
-shopt -s globstar
-
 # enable programmable completion features
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -210,3 +206,8 @@ ingitdirswithchanges()
         cd ..
     done
 }
+
+if [ -d "/Users/$USER/Library/Android/sdk" ]; then
+	export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+	export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+fi

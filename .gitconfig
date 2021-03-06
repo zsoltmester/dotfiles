@@ -12,50 +12,46 @@
 	aa = add --all
 
 	b = branch
-    ba = branch --all
+	ba = branch --all
 	bd = branch -D
+	bsu = branch --set-upstream-to
 
 	co = checkout
 	cob = checkout -b
-    com = checkout master
-    cod = checkout development
+	com = checkout master
+	cod = checkout develop
 
 	c = commit
 	cm = commit -m
 	ca = commit --amend -C HEAD
 
-    cp = cherry-pick
+	cp = cherry-pick
 
 	d = diff
 	ds = diff --staged
 
-	f = fetch --prune --tags
+	f = fetch --tags
 
 	l = log
 	lp = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
 	m = merge
-	md = merge development
+	md = merge develop
 
-	ps = push -u
-	psf = push -u -f
-	pso = push -u origin
-	psfo = push -u -f origin
-	psm = push -u origin master
-	psfm = push -u -f origin master
+	ps = push
+	psu = push -u
 
-	pl = pull --prune
-	plo = pull --prune origin
+	pl = pull
 
 	rb = rebase
-	rbd = rebase development
-    rbm = rebase master
+	rbd = rebase develop
+	rbm = rebase master
 	rbi = rebase --interactive
 	rbc = rebase --continue
-    rba = rebase --abort
+	rba = rebase --abort
 
-    rs = reset
-    rsh = reset --hard
+	rs = reset
+	rsh = reset --hard
 	rss = reset --soft
 
 	st = status
@@ -69,7 +65,7 @@
 	aa-c-ps = !git aa && git c && git ps
 	aa-ca-psf = !git aa && git ca && git psf
 
-    up = !git shc && git sh && git pl && git shp
-    branch-name = rev-parse --abbrev-ref HEAD
-    reset-gitignore = !git rm --cached -r . && git aa
-    clear = !git shc && git rsh && git clean -xfd
+	up = !git shc && git sh && git pl && git shp
+	branch-name = rev-parse --abbrev-ref HEAD
+	reset-gitignore = !git rm --cached -r . && git aa
+	clear = !git shc && git rsh && git clean -xfd
