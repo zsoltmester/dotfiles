@@ -12,7 +12,11 @@ alias fgrep='fgrep --color=auto'
 # ls aliases for both GNU and BSD version
 if ls --color=auto &> /dev/null; then
     alias ls='ls --color=auto'
-    alias ll='ls -alhF --group-directories-first'
+    if [ "$OSTYPE" == linux-gnu ]; then
+        alias ll='ls -alhF --group-directories-first'
+    else
+        alias ll='gls -alhF --group-directories-first'
+    fi
 else
     export CLICOLOR=1
     alias ll='ls -alhF'
