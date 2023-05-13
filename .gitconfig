@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
+	autoSetupRemote = true
 [fetch]
     prune = true
 [alias]
@@ -71,3 +72,10 @@
 	clear = !git shc && git rsh && git clean -xfd
 [pull]
 	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[http]
+	sslBackend = openssl
