@@ -17,4 +17,6 @@ if [ -n "$BASH_VERSION" ]; then
     if [ -f "$HOME/.bashrc" ]; then
 	    . "$HOME/.bashrc"
     fi
+    # silence deprecation warning on mac
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 fi
